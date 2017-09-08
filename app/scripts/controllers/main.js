@@ -118,11 +118,17 @@ angular.module('driveApp').controller('MainCtrl', function ($scope) {
         	if(response.hasOwnProperty('result')){
         		if(response.result.hasOwnProperty('files')){
         			console.log("heeey")
+        			var x = []
         			for(var i = 0; i < response.result.files.length; i++){
         				console.log("Hellos")
-        				$scope.folders.push(response.result.files[i]);
+        				x.push(response.result.files[i]);
+        				console.log(x)
         			}
-        			console.info("fef", $scope.folders.constructor == Array)
+        			
+        			$scope.$apply(function(){
+        				$scope.folders = x;	
+        			})
+        			
         		}	
         	}
           
@@ -130,5 +136,5 @@ angular.module('driveApp').controller('MainCtrl', function ($scope) {
       }
 
        $scope.handleClientLoad();
-       console.info("ssfew", $scope.folders.length)
+     
   });
