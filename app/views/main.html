@@ -1,0 +1,26 @@
+<div class="">
+  <button id="authorize-button" class="btn btn-primary" style="position:absolute; top:80px; left:0; ">Authorize</button>
+  <button id="signout-button" class="btn btn-primary" style="position:absolute; top:80px; left:100px; ">Sign Out</button>
+  <div>
+    <h1>Carpetas Disponibles</h1>
+      <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in folders track by $index">
+          <td>{{item.name}}</td>
+          <td>{{item.id}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p ng-repeat="item in folders track by $index">{{item.name}}</p>
+
+    <a href="">{{folders}}</a>
+  </div>
+  <!--<pre id="content"></pre>-->
+</div>
